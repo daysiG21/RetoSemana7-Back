@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "6776ebfa-6c49-45a3-9f04-4998d60c4ca1",
+		"name": "Mondo-Tareas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuarioNombre\": \"Julian\",\r\n    \"usuarioApellido\": \"Lopez\",\r\n    \"usuarioCorreo\": \"Ljulian@gmail.com\",\r\n    \"password\": \"123456aeiou\",\r\n    \"usuarioCelular\":976543136,\r\n    \"usuarioFechaNacimiento\": \"2015-09-21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/registro",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/tarea",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiI2MDkwODQ5YzQ3NTBiMDUxODhiZWRhZjQiLCJ1c3VhcmlvQ29ycmVvIjoiTGp1bGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2MjAwODM4ODEsImV4cCI6MTYyMDA4NzQ4MX0.e7qkC_QHDxLWA_ZogaaohE2uujSvWzBUIQnNx7eBdAc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/tarea",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"tarea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/tarea",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiI2MDkwODQ5YzQ3NTBiMDUxODhiZWRhZjQiLCJ1c3VhcmlvQ29ycmVvIjoiTGp1bGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2MjAwODM4ODEsImV4cCI6MTYyMDA4NzQ4MX0.e7qkC_QHDxLWA_ZogaaohE2uujSvWzBUIQnNx7eBdAc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tareaFecha\":\"2020-09-02\",\r\n    \"tareanombre\":\"escribir\",\r\n    \"tareaLugar\":\"oficina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/tarea",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"tarea"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"Ljulian@gmail.com\",\r\n    \"password\":\"123456aeiou\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

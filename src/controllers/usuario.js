@@ -1,10 +1,12 @@
 import { Usuario } from "../models/usuario";
 import { hashSync, compareSync } from "bcrypt";
+import { sign } from "jsonwebtoken";
 
 export const registro = async (req, res) => {
   // hay dos formas de hacer una creacion
   // *Forma 1:
   const objUsuario = new Usuario(req.body);
+ 
   // *Aca encriptamos la contraseña
   const pwdHash = hashSync(req.body.password, 10);
   objUsuario.password = pwdHash;
@@ -83,10 +85,16 @@ export const login = async (req, res) => {
      * TODO: SEGUNDA PARTE: crear una ruta para crear y devolver todas las tareas de un usuario pero proteger la ruta con un JWT
      * TODO: TERCERA PARTE: subirlo a un REPO en github y compartir el repo
      */
-
+    
+    const payload = {
+      usuarioId :usuario._id,
+      usuarioCorreo: usuario.usuarioCorreo
+    }
+    const token = sign(payload,process.env.JWT_SECRET,{expiresIn: "1h"})
+    
     return res.json({
       success: true,
-      content: null,
+      content: token,
       message: "bienvenido",
     });
   }

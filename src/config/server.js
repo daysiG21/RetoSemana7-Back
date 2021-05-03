@@ -2,7 +2,7 @@ import express from "express";
 import {json} from "body-parser";
 import { connect } from "mongoose";
 import {usuario_router} from "../routes/usuario";
-require("dotenv").config()
+import {tarea_router} from "../routes/tareas";
 
 export default class server{
   constructor(){
@@ -18,6 +18,7 @@ export default class server{
   rutas() {
     this.app.get("/", (req, res) => res.send("Bienvenido a mi API"));
     this.app.use(usuario_router);
+    this.app.use(tarea_router);
   }
   iniciarServidor(){
     this.app.listen(this.port,async()=>{
